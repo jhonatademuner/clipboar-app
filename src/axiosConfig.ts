@@ -1,12 +1,13 @@
-import axios from 'axios';
+import axios from "axios";
+import dotenv from "dotenv";
 
-// Set the base URL for your API
+dotenv.config();
+
 const instance = axios.create({
-  baseURL: 'http://localhost:8080/', // Replace with your actual base URL
-  timeout: 10000, // Optional: Set a timeout (in milliseconds)
+  baseURL: process.env.NEXT_PUBLIC_BASE_URI,
+  timeout: 10000,
   headers: {
-    'Content-Type': 'application/json',
-    
+    "Content-Type": "application/json",
   },
 });
 
